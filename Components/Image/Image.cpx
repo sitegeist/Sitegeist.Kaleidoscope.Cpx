@@ -1,0 +1,24 @@
+from "../ImageSource/ImageSource.cpx" import { ImageSource }
+
+export component Image {
+    imageSource: ImageSource
+    srcset: ?string
+    sizes: ?string
+    alt: ?string
+    title: ?string
+    width: ?number
+    height: ?number
+    format: ?string
+    class: ?string
+    loading: ?string
+
+    render <img
+      sizes={sizes}
+      alt={alt}
+      title={title}
+      width={width}
+      height={height}
+      class={class}
+      loading={loading}
+    />
+}

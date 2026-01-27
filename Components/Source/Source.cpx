@@ -1,0 +1,22 @@
+from "../ImageSource/ImageSource.cpx" import { ImageSource }
+
+export component Source {
+    imageSource: ImageSource
+    srcset: ?string
+    sizes: ?string
+    width: ?number
+    height: ?number
+    type: ?string
+    format: ?string
+    media: ?string
+
+    render <source
+      srcset={srcset}
+      sizes={sizes}
+      width={width}
+      height={height}
+      type={format}
+      format={format}
+      media={media}
+    />
+}

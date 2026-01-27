@@ -1,0 +1,21 @@
+{
+    "description": "Adapter package that integrates PackageFactory.ComponentEngine with Sitegeist.Kaleidoscpope",
+    "type": "neos-package",
+    "name": "sitegeist/kaleidoscope-cpx",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "sitegeist/kaleidoscope": "^7.0",
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sitegeist\\Kaleidoscope\\Cpx\\": "Classes/",
+            "Sitegeist\\Kaleidoscope\\Cpx\\Components\\": "Components/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sitegeist.Kaleidoscope.Cpx"
+        }
+    }
+}
