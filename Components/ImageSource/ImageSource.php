@@ -18,7 +18,7 @@ use Sitegeist\Kaleidoscope\ValueObjects\ImageSourceProxy;
 final readonly class ImageSource
 {
 
-    private function __construct(
+    public function __construct(
         public ImageSourceInterface $source,
     ) {
     }
@@ -44,27 +44,6 @@ final readonly class ImageSource
             true,
         );
 
-        return new self($imageSourceObject);
-    }
-
-    public static function tryCreateForImageSourceProxy(ImageSourceProxy $proxy): ?self
-    {
-        $factory = Bootstrap::$staticObjectManager->get(ImageSourceFactory::class);
-        $imageSourceObject = $factory->tryCreateFromProxy($proxy);
-        if ($imageSourceObject instanceof ImageSourceInterface) {
-            return new self($imageSourceObject);
-        }
-        return null;
-    }
-
-    public static function createForImageInterface(ImageInterface $image, string $alt, string $title): self
-    {
-        $imageSourceObject = new AssetImageSource(
-            $image,
-            $title,
-            $alt,
-            true
-        );
         return new self($imageSourceObject);
     }
 }
