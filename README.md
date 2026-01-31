@@ -6,6 +6,8 @@
 
 ## Usage 
 
+Render image-tag
+
 ```
 from "Sitegeist.Kaleidoscope.Cpx/ImageSource/ImageSource.cpx" import { ImageSource }
 from "Sitegeist.Kaleidoscope.Cpx/Image/Image.cpx" import { Image }
@@ -21,9 +23,24 @@ export component TextImage {
           imageSource={imageSource} width={300} height={null} format={null}
           srcset="300w, 400w, 500w" sizes="50%" loading={null}         
           alt="" title="" class=""
-          />
-          
-        <picture>
+          />      
+    </div>
+}
+```
+
+Render a picture-tag
+
+```
+from "Sitegeist.Kaleidoscope.Cpx/ImageSource/ImageSource.cpx" import { ImageSource }
+from "Sitegeist.Kaleidoscope.Cpx/Image/Image.cpx" import { Image }
+from "Sitegeist.Kaleidoscope.Cpx/Source/Source.cpx" import { Source }
+
+export component TextImage {
+    imageSource: ImageSource
+    content: string
+
+    render 
+      <picture>
           <Image
               imageSource={imageSource} width={300} height={null} format={null}
               srcset="300w, 400w, 500w" sizes="50%" loading={null}         
@@ -42,9 +59,10 @@ export component TextImage {
         </picture>
     </div>
 }
-
 ```
 
+The class `\Sitegeist\Kaleidoscope\Cpx\Components\ImageSource\ImageSourceFactory` allows to 
+create image-sources for ImagesInterfaces, ImageSoureProxies and DummyImages.
 
 ## License
 
