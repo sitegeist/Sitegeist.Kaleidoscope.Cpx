@@ -15,12 +15,12 @@ final class ImageSourceFactory
     #[Flow\Inject]
     protected ObjectManager $objectManager;
 
-    protected ?\Sitegeist\Kaleidoscope\Cpx\Components\ImageSource\ImageSourceFactory $imageSourceFactory = null;
+    protected ?\Sitegeist\Kaleidoscope\ValueObjects\Factory\ImageSourceFactory $imageSourceFactory = null;
 
     public function tryCreateForImageSourceProxy(\Sitegeist\Kaleidoscope\ValueObjects\ImageSourceProxy $proxy): ?ImageSource
     {
         if ($this->imageSourceFactory === null) {
-            $this->imageSourceFactory = $this->objectManager->get(ImageSourceFactory::class);
+            $this->imageSourceFactory = $this->objectManager->get('Sitegeist\Kaleidoscope\ValueObjects\Factory\ImageSourceFactory');
         }
         $imageSourceObject = $this->imageSourceFactory->tryCreateFromProxy($proxy);
         if ($imageSourceObject instanceof ImageSourceInterface) {
