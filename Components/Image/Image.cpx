@@ -2,15 +2,15 @@ from "../ImageSource/ImageSource.cpx" import { ImageSource }
 
 export component Image {
     imageSource: ImageSource
-    srcset: ?string
-    sizes: ?string
-    alt: ?string
-    title: ?string
-    width: ?integer
-    height: ?integer
-    format: ?string
-    class: ?string
-    loading: ?string
+    srcset?: string
+    sizes?: string
+    alt?: string
+    title?: string
+    width?: integer
+    height?: integer
+    format?: string
+    class?: string
+    loading?: string
 
     render <img
       sizes={sizes}

@@ -2,13 +2,13 @@ from "../ImageSource/ImageSource.cpx" import { ImageSource }
 
 export component Source {
     imageSource: ImageSource
-    srcset: ?string
-    sizes: ?string
-    width: ?integer
-    height: ?integer
-    type: ?string
-    format: ?string
-    media: ?string
+    srcset?: string
+    sizes?: string
+    width?: integer
+    height?: integer
+    type?: string
+    format?: string
+    media?: string
 
     render <source
       srcset={srcset}
