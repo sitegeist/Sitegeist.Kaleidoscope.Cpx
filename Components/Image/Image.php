@@ -20,6 +20,7 @@ final readonly class Image implements _\ComponentInterface
         private ?int $height,
         private ?string $class,
         private ?string $loading,
+        private ?string $fetchpriority,
     ) {
     }
 
@@ -33,7 +34,8 @@ final readonly class Image implements _\ComponentInterface
         ?int $height,
         ?string $format,
         ?string $class,
-        ?string $loading
+        ?string $loading,
+        ?string $fetchpriority,
     ): self {
         $imageSourceObject = $imageSource->source;
 
@@ -59,6 +61,7 @@ final readonly class Image implements _\ComponentInterface
             height: $height,
             class: $class,
             loading: $loading,
+            fetchpriority: $fetchpriority,
         );
     }
 
@@ -68,6 +71,7 @@ final readonly class Image implements _\ComponentInterface
         $src = (($temp = $this->src) === null ? '' : ' src="' . _\Util::escapeAttributeValue($temp) . '"');
         $srcset = (($temp = $this->srcset) === null ? '' : ' srcset="' . _\Util::escapeAttributeValue($temp) . '"');
         $loading = (($temp = $this->loading) === null ? '' : ' loading="' . _\Util::escapeAttributeValue($temp) . '"');
-        return '<img '. $src . $srcset . $loading . $sizes . (($temp = $this->alt) === null ? '' : ' alt="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->title) === null ? '' : ' title="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->width) === null ? '' : ' width="' . $temp . '"') . '' . (($temp = $this->height) === null ? '' : ' height="' . $temp . '"') . '' . (($temp = $this->class) === null ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . ' />';
+        $fetchpriority = (($temp = $this->fetchpriority) === null ? '' : ' fetchpriority="' . _\Util::escapeAttributeValue($temp) . '"');
+        return '<img '. $src . $srcset . $loading . $fetchpriority . $sizes . (($temp = $this->alt) === null ? '' : ' alt="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->title) === null ? '' : ' title="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->width) === null ? '' : ' width="' . $temp . '"') . '' . (($temp = $this->height) === null ? '' : ' height="' . $temp . '"') . '' . (($temp = $this->class) === null ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . ' />';
     }
 }
